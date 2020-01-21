@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Question, Choice} from "./question.model";
+import {Question, Choice} from "../model/question.model";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/internal/operators";
 

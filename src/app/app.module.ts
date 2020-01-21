@@ -5,7 +5,7 @@ import {AppComponent} from "./app.component";
 import {QuestionListComponent} from "./questions/question-list/question-list.component";
 import {QuestionItemComponent} from "./questions/question-list/question-item/question-item.component";
 import {QuestionsComponent} from "./questions/questions.component";
-import {QuestionService} from "./questions/question.service";
+import {QuestionService} from "./questions/service/question.service";
 import {QuestionDetailComponent} from "./questions/question-detail/question-detail.component";
 import {QuestionEditComponent} from "./questions/question-edit/question-edit.component";
 import {HeaderComponent} from "./header/header.component";
