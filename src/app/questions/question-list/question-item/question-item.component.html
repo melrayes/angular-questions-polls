@@ -1,0 +1,16 @@
+<a
+  style="cursor: pointer;"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    {{index +1 }}. {{question.question}}
+  </div>
+  <br>
+  <span class="pull-left">
+      Choices<{{question.choices.length}}>
+    </span>
+  <span class="pull-right">
+      {{question.publishedDate | date:'medium'}}
+    </span>
+</a>

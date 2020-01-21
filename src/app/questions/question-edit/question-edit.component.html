@@ -1,0 +1,70 @@
+<h2>Add new Question</h2>
+<hr>
+
+<div class="row">
+  <div class="col-xs-10">
+    <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <div class="col-xs-10">
+          <div class="form-group">
+            <label for="question">Question</label>
+            <input
+              type="text"
+              id="question"
+              formControlName="question"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-10">
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="onAddChoice()">Add Choice
+          </button>
+        </div>
+
+        <div class="col-xs-10" formArrayName="choices">
+          <div
+            class="row"
+            *ngFor="let choice of questionForm.get('choices').controls; let i = index"
+            [formGroupName]="i"
+            style="margin-top: 10px;">
+
+            <div class="col-xs-8">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="choice">
+            </div>
+
+            <div class="col-xs-2">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDeleteChoice(i)">X
+              </button>
+            </div>
+          </div>
+          <hr>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-10">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!questionForm.valid">Save
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+<h1>Questions</h1>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-question-item
+      *ngFor="let question of questions; let i = index"
+      [question]="question"
+      [index]="i"></app-question-item>
+  </div>
+</div>
