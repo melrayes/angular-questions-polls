@@ -12,6 +12,7 @@ export class QuestionDetailComponent implements OnInit {
   question: Question;
   id: number;
   selectedChoice: string = null;
+  totalVotesNumber: number = 0;
 
   constructor(private questionService: QuestionService,
               private route: ActivatedRoute,
@@ -24,6 +25,8 @@ export class QuestionDetailComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.question = this.questionService.getQuestion(this.id);
+          this.totalVotesNumber = this.question.choices
+            .map(c => c.votes).reduce((a, value) => a + value, 0);
         });
   }
 

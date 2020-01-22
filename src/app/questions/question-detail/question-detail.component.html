@@ -17,7 +17,9 @@
       {{choice.choice}}
     </label>
     <div class="pull-right">
-      Votes <{{choice.votes}}>
+      <i>
+        Votes<{{choice.votes}}> -- Percentage<~{{choice.votes/totalVotesNumber | percent}}>
+      </i>
     </div>
   </div>
   <hr>
