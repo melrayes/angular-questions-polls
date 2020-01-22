@@ -33,6 +33,10 @@ export class QuestionEditComponent implements OnInit {
     );
   }
 
+  getChoicesControls() {
+    return (<FormArray>this.questionForm.get('choices')).controls;
+  }
+
   onDeleteChoice(index: number) {
     (<FormArray>this.questionForm.get('choices')).removeAt(index);
   }

@@ -30,7 +30,7 @@
         <div class="col-xs-10" formArrayName="choices">
           <div
             class="row"
-            *ngFor="let choice of questionForm.get('choices').controls; let i = index"
+            *ngFor="let choice of getChoicesControls() ; let i = index"
             [formGroupName]="i"
             style="margin-top: 10px;">
 
